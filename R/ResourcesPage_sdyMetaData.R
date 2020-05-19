@@ -36,7 +36,7 @@
   sdyMetaData$y <- umap[,2]
 
   # ----- prepare for serving ----
-  sdyMetaData <- prepareSdyMetaDataForService(sdyMetaData, assays)
+  sdyMetaData <- prepareSdyMetaDataForService(sdyMetaData, assays, studyAccessions)
 
   # Convert to list of lists for parsing
   res <- lapply( split(sdyMetaData, seq_along(sdyMetaData[,1])), as.list)
@@ -153,7 +153,7 @@ calculateDistanceMatrix <- function(sdyMetaData){
     catDistMx * (length(useCategorical)/length(colnames(sdyMetaData)))
 }
 
-prepareSdyMetaDataForService <- function(sdyMetaData, assays){
+prepareSdyMetaDataForService <- function(sdyMetaData, assays, studyAccessions){
   # Remove columns not needed for labeling: individual assay*timepoint
   assaysGrep <- paste(paste0("^", assays), collapse = "|")
   assayColsToRm <- grep(assaysGrep, colnames(sdyMetaData))
