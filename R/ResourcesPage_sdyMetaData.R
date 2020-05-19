@@ -65,7 +65,7 @@ extractIntegerFromString <- function(string){
   }
 }
 
-mapToNewConditon <- function(x){
+mapToNewCondition <- function(x){
     if( grepl("healthy|normal|naive", x, ignore.case = TRUE)){
       return("Healthy")
     }else if(grepl("influenza|H1N1", x, ignore.case = TRUE)){
