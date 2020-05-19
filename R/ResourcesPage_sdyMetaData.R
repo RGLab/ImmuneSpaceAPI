@@ -24,7 +24,7 @@
   sdyMetaData <- addAssayData(sdyMetaData, assays)
 
   # ------- Distance Calculations ---
-  totalDistMx <- calcDistanceMatrix(sdyMetaData)
+  totalDistMx <- calculateDistanceMatrix(sdyMetaData)
 
   # ------- Dimension Reduction ----
   # Use UMAP to embed distance matrix in 2d space - https://github.com/jlmelville/uwot/issues/22
