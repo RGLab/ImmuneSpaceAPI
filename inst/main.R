@@ -2,7 +2,7 @@
 # ResourcesPage/API/cronjob.R should do major pre-processing.
 # This script does any parameterized processing work and
 # serves the endpoints via the R utility Plumber.
-
+library(ImmuneSpaceLabKeyAPI)
 
 #############################################
 ###               ENDPOINTS               ###

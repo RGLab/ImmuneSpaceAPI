@@ -6,7 +6,6 @@
 #' @import plumber
 #' @export
 startAPI <- function(){
-  library(ImmuneSpaceLabKeyAPI)
   pathToScript <- file.path(system.file(package = "ImmuneSpaceCronjobs"),
                             "main.R")
   plumber::plumb(pathToScript)
