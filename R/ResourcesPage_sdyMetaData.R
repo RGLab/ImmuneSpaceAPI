@@ -65,7 +65,8 @@ extractIntegerFromString <- function(string){
   }
 }
 
-mapToNewCondition <- function(x){
+addConditionData <- function(sdyMetaData){
+  mapToNewCondition <- function(x){
     if( grepl("healthy|normal|naive", x, ignore.case = TRUE)){
       return("Healthy")
     }else if(grepl("influenza|H1N1", x, ignore.case = TRUE)){
@@ -101,9 +102,8 @@ mapToNewCondition <- function(x){
     }else{
       return("Unknown")
     }
-}
+  }
 
-addConditionData <- function(sdyMetaData){
   sdyMetaData$newCondition <- sapply(sdyMetaData$condition_studied, mapToNewCondition)
   sdyMetaData <- sdyMetaData[ , -grep("condition_studied", colnames(sdyMetaData))]
 
