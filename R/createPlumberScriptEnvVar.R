@@ -3,10 +3,10 @@
 
 #' Wrapper function for starting plumber service from within Docker
 #'
-#' @import plumber
 #' @export
-startAPI <- function(){
-  pathToScript <- file.path(system.file(package = "ImmuneSpaceCronjobs"),
+createPlumberScriptEnvVar <- function(filePath){
+  pathToScript <- file.path(system.file(package = "ImmuneSpaceLabKeyAPI"),
                             "main.R")
-  plumber::plumb(pathToScript)
+  file.create(filePath)
+  writeLines(pathToScript, filePath)
 }
