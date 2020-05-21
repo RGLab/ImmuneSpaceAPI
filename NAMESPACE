@@ -3,7 +3,6 @@
 export(.log_data)
 export(.pubmed_data)
 export(.sdy_metadata)
-export(copyPlumberScriptToLocation)
 export(loadLocalFile)
 import(data.table)
 import(uwot)

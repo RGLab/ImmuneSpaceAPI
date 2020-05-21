@@ -3,7 +3,7 @@
 #' @param fileName file name sub-string to use for search
 #' @export
 loadLocalFile <- function(fileName){
-  # check for localPath if doing local testing
+  # check for localPath if doing local development
   localPath <- tryCatch({
     get("localPath")
     }, error = function(e){
