@@ -15,7 +15,8 @@ $ docker build -t lkapi .
 $ docker run --rm -p 8000:8000 -v /share/files/Studies/R_API_resources:/app lkapi
 
 Server Deployment:
-After changes are made locally, push changes to the respective branch on github.  Pull any changes on the wsT/wsP machine and then rebuild the image and start a new container.
+After changes are made locally, push changes to the respective branch on github.  Pull any changes on the wsT/wsP machine and then rebuild the image and start a new container with a command that includes an "always" restart policy:
+$ $ docker run --rm --restart always -p 8000:8000 -v /share/files/Studies/R_API_resources:/app lkapi
 
 Extending:
 - Add endpoint in the `inst/main.R`
