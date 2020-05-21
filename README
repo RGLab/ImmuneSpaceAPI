@@ -20,3 +20,6 @@ After changes are made locally, push changes to the respective branch on github.
 Extending:
 - Add endpoint in the `inst/main.R`
 - Add functions in `/R` with the format <ModuleName>_<endpointName>.R
+
+Proxy Note:
+- In order to ensure that the API is accessible via the web, then an ImmuneSpace administrator must set the path within LabKey (gear symbol > folder  > management > module properties > property: target uri) to the localhost (http://localhost:8000/).  Importantly this is not 'https'.
