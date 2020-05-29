@@ -6,9 +6,9 @@ sdyMetaData <- readRDS("datasets/2019-12-09_sdyMetaData.rds")
 
 test_that("ensureAllIntegerValues", {
   tmp <- c(".00", ">30", "20", "8.00")
-  new <- ImmuneSpaceLabKeyAPI:::ensureAllIntegerValues(tmp)
-  expect_true(all(is.integer(newMinAge)))
-  expect_true(all.equal(new, c(0,30,20,8)))
+  newMinAge <- ImmuneSpaceLabKeyAPI:::ensureAllIntegerValues(tmp)
+  expect_true(all(is.double(newMinAge)))
+  expect_true(all.equal(newMinAge, c(0,30,20,8)))
 })
 
 test_that("addConditionData", {
