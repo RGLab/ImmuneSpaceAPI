@@ -148,7 +148,7 @@ calculateDistanceMatrix <- function(sdyMetaData){
   catMx <- sdyMetaData[ , useCategorical]
   catDistMx <- suppressWarnings(as.matrix(dist(catMx, method = "binary")))
 
-  # combine distance metrics in proportion to info (e.g numColsEuc/TotalCols * eucDist + )
+  # combine distance metrics in proportion to info
   totalDistMx <- eucDistMx * (length(useEuclidean)/length(colnames(sdyMetaData))) +
     catDistMx * (length(useCategorical)/length(colnames(sdyMetaData)))
 }

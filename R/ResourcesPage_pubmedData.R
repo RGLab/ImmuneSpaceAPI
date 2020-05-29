@@ -9,7 +9,7 @@
   countByPubId <- getCountByPubId(allIds)
 
   # Setup for easy use in render named list with original_id
-  # as key and value {Citations: X, Study: Y, datePublished: Z}
+  # as key and value {citations, study, datePublished, studyNum, title}
   res <- preparePubMedDataForService(countByPubId)
 }
 
