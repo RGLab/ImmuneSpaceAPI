@@ -18,11 +18,10 @@
 ###############################################
 getCountByPubId <- function(allIds){
   countByPubId <- allIds[, .(Citations = .N,
-                             study = unique(study),
                              datePublished = unique(datePublished),
                              title = unique(original_title),
                              studyNum = unique(studyNum)),
-                         by = .(original_id)]
+                         by = .(original_id, study)]
   setorder(countByPubId, -Citations)
   return(countByPubId)
 }
