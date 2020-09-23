@@ -18,11 +18,20 @@
 ###############################################
 getCountByPubId <- function(allIds){
   countByPubId <- allIds[, .(Citations = .N,
-                             study = unique(study),
                              datePublished = unique(datePublished),
                              title = unique(original_title),
                              studyNum = unique(studyNum)),
-                         by = .(original_id)]
+                         by = .(original_id, study)]
+
+  # For papers connected to multiple studies, take first listed
+  for(id in unique(countByPubId$original_id)){
+    loc <- which(countByPubId$original_id == id)
+    if(length(loc) > 1){
+      locToRemove <- loc[2:length(loc)]
+      countByPubId <- countByPubId[ -locToRemove,]
+    }
+  }
+
   setorder(countByPubId, -Citations)
   return(countByPubId)
 }
