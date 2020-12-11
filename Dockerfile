@@ -4,7 +4,8 @@ MAINTAINER Evan Henrich <ehenrich@fredhutch.org
 # plumber: libssl-dev, libcurl4-gnutls-dev
 RUN apt-get update -qq && apt-get install -y \
   libssl-dev \
-  libcurl4-gnutls-dev
+  libcurl4-gnutls-dev \
+  libsodium-dev
 
 # Install package dependencies first to minimize re-installation
 # if only making changes to the ImmuneSpaceLabKeyAPI package
