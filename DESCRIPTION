@@ -13,7 +13,8 @@ LazyData: true
 RoxygenNote: 7.1.1
 Suggests:
     testthat,
-    covr
+    covr,
+    plumber
 Depends: 
     R (>= 3.5.0),
     data.table,
