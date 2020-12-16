@@ -19,7 +19,7 @@ testPubMedData <- function(data){
 test_that("countByPubId", {
   countByPubId <- ImmuneSpaceLabKeyAPI:::getCountByPubId(pubMedData)
 
-  expectedCols <- c("original_id", "Citations", "study", "datePublished", "title", "studyNum")
+  expectedCols <- c("original_id", "study", "Citations", "datePublished", "title", "studyNum")
   expect_equivalent(expectedCols, colnames(countByPubId))
 
   testPubMedData(countByPubId)
