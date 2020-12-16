@@ -1,5 +1,5 @@
 FROM rocker/r-base
-MAINTAINER Evan Henrich <ehenrich@fredhutch.org
+MAINTAINER ImmuneSpace Maintainer <immunespace@gmail.com>
 
 # plumber: libssl-dev, libcurl4-gnutls-dev
 RUN apt-get update -qq && apt-get install -y \
