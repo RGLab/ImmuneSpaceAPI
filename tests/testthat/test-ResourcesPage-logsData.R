@@ -3,7 +3,7 @@ context("Process Logs Data")
 logsData <- readRDS("datasets/2020-01-30_parsedLogs.rds")
 
 test_that("mungeLogsbyStudy", {
-  byStudy <- ImmuneSpaceLabKeyAPI:::mungeLogsToByStudy(logsData)
+  byStudy <- ImmuneSpaceAPI:::mungeLogsToByStudy(logsData)
   expect_true(is.list(byStudy))
   expect_equivalent(names(byStudy[[1]]), c("studyId", "ISR", "UI", "total"))
   tmp <- data.table::rbindlist(byStudy)
@@ -12,7 +12,7 @@ test_that("mungeLogsbyStudy", {
 })
 
 test_that("mungeLogsByMonth", {
-  byMonth <- ImmuneSpaceLabKeyAPI:::mungeLogsToByMonth(logsData)
+  byMonth <- ImmuneSpaceAPI:::mungeLogsToByMonth(logsData)
   expect_true(is.list(byMonth))
   expect_equivalent(names(byMonth[[1]]), c("Month", "ISR", "UI", "total"))
   tmp <- data.table::rbindlist(byMonth)

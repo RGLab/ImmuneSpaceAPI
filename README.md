@@ -1,8 +1,8 @@
-# ImmuneSpaceLabKeyAPI
+# ImmuneSpaceAPI
 
 <!-- badges: start -->
-[![R-CMD-check](https://github.com/RGLab/ImmuneSpaceLabKeyAPI/workflows/R-CMD-check/badge.svg)](https://github.com/RGLab/ImmuneSpaceLabKeyAPI/actions)
-[![Codecov test coverage](https://codecov.io/gh/RGLab/ImmuneSpaceLabKeyAPI/branch/master/graph/badge.svg)](https://codecov.io/gh/RGLab/ImmuneSpaceLabKeyAPI?branch=master)
+[![R-CMD-check](https://github.com/RGLab/ImmuneSpaceAPI/workflows/R-CMD-check/badge.svg)](https://github.com/RGLab/ImmuneSpaceAPI/actions)
+[![Codecov test coverage](https://codecov.io/gh/RGLab/ImmuneSpaceAPI/branch/main/graph/badge.svg)](https://codecov.io/gh/RGLab/ImmuneSpaceAPI?branch=main)
 [![Lifecycle: stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://www.tidyverse.org/lifecycle/#stable)
 <!-- badges: end -->
 
@@ -18,8 +18,8 @@ To do local development, the file-loading function `loadLocalFile()` that pulls 
 mkdir -p /share/files/Studies/R_API_resources
 cd /share/files/Studies/R_API_resources
 scp rsT: /share/files/Studies/R_API_resources/*.rds .
-git clone https://github.com/RGLab/ImmuneSpaceLabKeyAPI.git
-cd ImmuneSpaceLabKeyAPI
+git clone https://github.com/RGLab/ImmuneSpaceAPI.git
+cd ImmuneSpaceAPI
 docker build -t lkapi .
 docker run --restart always -p 8000:8000 -v /share/files/Studies/R_API_resources:/app lkapi
 ```

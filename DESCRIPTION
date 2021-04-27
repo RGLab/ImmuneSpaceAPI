@@ -1,4 +1,4 @@
-Package: ImmuneSpaceLabKeyAPI
+Package: ImmuneSpaceAPI
 Type: Package
 Title: ImmuneSpace Internal API for use in visualizations and reports
 Version: 0.1.0
