@@ -1,3 +1,3 @@
 library(testthat)
-library(ImmuneSpaceLabKeyAPI)
-test_check("ImmuneSpaceLabKeyAPI")
+library(ImmuneSpaceAPI)
+test_check("ImmuneSpaceAPI")
