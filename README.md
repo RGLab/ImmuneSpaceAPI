@@ -10,9 +10,7 @@ This package holds all API endpoints for use within ImmuneSpace internally by re
 
 ## Local Development
 
-To do local development, the file-loading function `loadLocalFile()` that pulls in .rds artifacts for munging is found in `utils.R`. It looks for a `localPath` environmental variable specifying the local path to use. If this is not found, then it assumes the location is the server and will use the '/app' directory specified during the `docker run` command. So, it is recommended to put `localPath` in your .Renviron file.
-
-### Example workflow
+To do local development, the file-loading function `loadLocalFile()` that pulls in .rds artifacts for munging is found in `utils.R`. It looks for a `localPath` environmental variable specifying the local path to use. If this is not found, then it assumes the location is the server and will use the `/app` directory specified during the `docker run` command. So, it is recommended to put `localPath` in your .Renviron file.
 
 ``` sh
 mkdir -p /share/files/Studies/R_API_resources
@@ -21,7 +19,7 @@ scp rsT: /share/files/Studies/R_API_resources/*.rds .
 git clone https://github.com/RGLab/ImmuneSpaceAPI.git
 cd ImmuneSpaceAPI
 docker build -t lkapi .
-docker run --restart always -p 8000:8000 -v /share/files/Studies/R_API_resources:/app lkapi
+docker run -d --restart always -p 8000:8000 -v /share/files/Studies/R_API_resources:/app lkapi
 ```
 
 ## Server Deployment
@@ -29,7 +27,15 @@ docker run --restart always -p 8000:8000 -v /share/files/Studies/R_API_resources
 After changes are made locally, push changes to the respective branch on github. Pull any changes on the wsT/wsP machine and then rebuild the image and start a new container with a command that includes an "always" restart policy:
 
 ``` sh
-docker run --rm --restart always -p 8000:8000 -v /share/files/Studies/R_API_resources:/app lkapi
+ssh wsT
+s
+i
+cd /share/files/Studies/R_API_resources/ImmuneSpaceAPI
+git pull
+exit
+cd /share/files/Studies/R_API_resources/ImmuneSpaceAPI
+docker build -t lkapi .
+docker run -d --restart always -p 8000:8000 -v /share/files/Studies/R_API_resources:/app lkapi
 ```
 
 ## Extending
