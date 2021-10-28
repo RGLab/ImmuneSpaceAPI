@@ -47,9 +47,14 @@ docker run -d --restart always -p 1169:8000 -v /share/resources:/app rglab/immun
 
 ## Proxy Note
 
-- In order to ensure that the API is accessible via the web, then an ImmuneSpace administrator must set the path within LabKey
-- gear symbol > folder  > management > module properties > property: target uri) to the localhost (http://localhost:8000/).
-- Importantly this is not 'https'.
+- In order to ensure that the API is accessible via the web, an ImmuneSpace administrator must set the path within LabKey.
+- Click "gear symbol" > Site > Admin Console > PROXY SERVLETS
+  - https://www.immunespace.org/proxy/proxyAdmin.view
+  - https://test.immunespace.org/proxy/proxyAdmin.view
+  - http://localhost:8080/proxy/proxyAdmin.view
+- Fill out and add proxy
+  - Proxy Name: plumber
+  - Target URI: http://localhost:1169
 
 ## Extending
 
