@@ -12,21 +12,18 @@ library(ImmuneSpaceAPI)
 #* @param from The start date
 #* @param to The end date
 #* @get /log_data
-function(from = NULL, to = NULL){
-  res <- .log_data(from, to)
-  return(res)
+function(from = NULL, to = NULL) {
+  .log_data(from, to)
 }
 
 #* Studies with most citations (for use also to show most recently published papers)
 #* @get /pubmed_data
 function(){
-  res <- .pubmed_data()
-  return(res)
+  .pubmed_data()
 }
 
 #* Get study clusters using UMAP
 #* @get /sdy_metadata
 function(){
-  res <- .sdy_metadata()
-  return(res)
+  .sdy_metadata()
 }
